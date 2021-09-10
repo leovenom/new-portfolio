@@ -117,7 +117,7 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
 }
-h1,h2,h3,h4{ 
+h1,h2,h3,h4,span{ 
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
 }
@@ -292,12 +292,14 @@ img {
 }
 
 .home__blob {
-    width: 200px;
+    width: 295px;
     fill: var(--first-color);
 }
 
 .home__blob-img {
     width: 170px;
+    transition: opacity .5s linear;
+    cursor: pointer;
 }
 
 .home__data {
@@ -306,6 +308,7 @@ img {
 
 .home__title {
     font-size: var(--big-font-size);
+    height: 72px;
 }
 
 .home__subtitle {
@@ -918,6 +921,13 @@ img {
     margin-top: var(--mb-3);
 }
 
+#year {
+    font-size: var(--smaller-font-size);
+    text-align: center;
+    color: var(--text-color-light);
+    margin-top: var(--mb-3);
+}
+
 .footer__title,
 .footer__subtitle,
 .footer__link,
@@ -1032,6 +1042,9 @@ img {
         display: grid;
         grid-template-columns: .6fr;
         justify-content: center;
+    }
+    .home__scroll-button {
+        margin-left: 2rem;
     }
 }
 
@@ -1182,6 +1195,9 @@ img {
     }
     .home__social {
         transform: translateX(-6rem);
+    }
+    .home__data {
+        width: 450px;
     }
     .services__container {
         grid-template-columns: repeat(3, 238px);
