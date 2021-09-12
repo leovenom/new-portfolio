@@ -772,6 +772,15 @@ img {
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
 }
+.portfolio__subtitle {
+    display: inline-block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+    background-color: var(--container-color);
+    color: var(--first-color);
+    padding: .5rem;
+}
+
 
 .portfolio__description {
     margin-bottom: var(--mb-0-75);
