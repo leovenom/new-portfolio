@@ -117,7 +117,11 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
 }
-h1,h2,h3,h4,span{ 
+h1,h2,h3,h4{ 
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+span.wrap {
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
 }
@@ -128,6 +132,7 @@ ul {
 
 a {
     text-decoration:none;
+    color: var(--first-color-alt);
 }
 
 img {
@@ -348,6 +353,21 @@ img {
 
 .home__scroll-arrow {
     font-size: 1.25rem;
+}
+.home__img {
+    position: relative;
+}
+.home__img:hover:after {
+    content: "Hahaha, stop tickling!";
+    background: var(--body-color);
+    color: var(--title-color);
+    padding: 5px 12px;
+    border: solid 1px var(--title-color);
+    position: absolute;
+    bottom: 103%;
+    left: 38%;
+    transform: translateX(8%);
+    border-radius: 15px;
 }
 
 /*==================== BUTTONS ====================*/
@@ -850,28 +870,6 @@ img {
     font-size: var(--small-font-size);
     color: var(--text-color-light);
 }
-
-.contact__content {
-    background-color: var(--input-color);
-    border-radius: .5rem;
-    padding: .75rem 1rem .25rem;
-}
-
-.contact__label {
-    font-size: var(--smaller-font-size);
-    color: var(--title-color);
-}
-
-.contact__input {
-    width: 100%;
-    background-color: var(--input-color);
-    color: var(--text-color);
-    font-family: var(--body-color);
-    font-size: var(--normal-font-size);
-    border: none;
-    outline: none;
-    padding: 0.25rem 0.5rem 0.5rem 0;
-}
 /*==================== FOOTER ====================*/
 .footer {
     padding-top: 2rem;
@@ -1034,7 +1032,6 @@ img {
     /* .skills__container, */
     .portfolio__content,
     .project__container,
-    .contact__container,
     .footer__container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1045,6 +1042,9 @@ img {
     }
     .home__scroll-button {
         margin-left: 2rem;
+    }
+    .contact__container {
+        justify-content: center;
     }
 }
 
@@ -1181,8 +1181,13 @@ img {
     .footer__copy {
         margin-top: 4.5rem
     }
+    .contact__container {
+        display: flex;
+        flex-direction:row;
+        gap: 7rem;
+    }
+    
 }
-
 /* For large devices */
 @media screen and (min-width: 1024px) {
     .header,
@@ -1217,10 +1222,7 @@ img {
     .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: -4.5rem;
     }
-    .contact__form {
-        width: 460px;
-    }
-    .contact__inputs {
-        grid-template-columns: repeat(2, 1fr);
+    .footer {
+        padding-top: 4rem;
     }
 }

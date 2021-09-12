@@ -1,10 +1,10 @@
 function hover(element) {
     element.setAttribute('href', 'assets/img/perfil2.png');
   }
-  
   function unhover(element) {
     element.setAttribute('href', 'assets/img/perfil.png');
   }
+  
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -98,6 +98,7 @@ modalCloses.forEach((modalClose) => {
         })
     })
 })
+
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiper = new Swiper(".portfolio__container", {
     cssMode: true,
@@ -113,9 +114,6 @@ let swiper = new Swiper(".portfolio__container", {
     // mousewheel: true,
     // keyboard: true,
   });
-
-/*==================== TESTIMONIAL ====================*/
-
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
