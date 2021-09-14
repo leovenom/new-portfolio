@@ -776,12 +776,23 @@ img {
     display: inline-block;
     font-size: var(--small-font-size);
     margin-bottom: var(--mb-1);
-    background-color: var(--container-color);
     color: var(--first-color);
-    padding: .5rem;
 }
-
-
+.badge {
+    font-size: var(--small-font-size);
+    color: var(--first-color);
+    background-color: var(--input-color);
+    margin: 0 .125em .333em 0;
+    line-height: 18px;
+    display: inline-block;
+    padding: .25em .4em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s;
+}
 .portfolio__description {
     margin-bottom: var(--mb-0-75);
 }
