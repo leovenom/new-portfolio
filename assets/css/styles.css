@@ -826,10 +826,13 @@ img {
 .swiper-pagination-bullet-active {
     background-color: var(--first-color);
 }
+.swiper-pagination-bullet {
+    outline: none;
+    background: var(--first-color);
+}
 
 .swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
+.swiper-button-next {
     outline: none;
 }
 
