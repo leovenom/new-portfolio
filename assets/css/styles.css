@@ -772,7 +772,27 @@ img {
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
 }
-
+.portfolio__subtitle {
+    display: inline-block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+    color: var(--first-color);
+}
+.badge {
+    font-size: var(--small-font-size);
+    color: var(--first-color);
+    background-color: var(--input-color);
+    margin: 0 .125em .333em 0;
+    line-height: 18px;
+    display: inline-block;
+    padding: .25em .4em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s;
+}
 .portfolio__description {
     margin-bottom: var(--mb-0-75);
 }
@@ -806,10 +826,13 @@ img {
 .swiper-pagination-bullet-active {
     background-color: var(--first-color);
 }
+.swiper-pagination-bullet {
+    outline: none;
+    background: var(--first-color);
+}
 
 .swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
+.swiper-button-next {
     outline: none;
 }
 
