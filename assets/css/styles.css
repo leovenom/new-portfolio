@@ -7,10 +7,10 @@
 
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 232; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 209; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color: hsl(var(--hue-color), 100%, 50%);
     --first-color-second: hsl(var(--hue-color), 69%, 61%);
     --first-color-alt: hsl(var(--hue-color), 57%, 53%);
     --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -523,7 +523,7 @@ img {
 }
 
 .skills__html {
-    width: 80%;
+    width: 70%;
 }
 
 .skills__css {
@@ -535,7 +535,7 @@ img {
 }
 
 .skills__react {
-    width: 50%;
+    width: 40%;
 }
 
 .skills__figma {
@@ -555,19 +555,19 @@ img {
 }
 
 .skills__node{
-    width: 50%;
+    width: 40%;
 }
 
 .skills__notion{
-    width: 70%;
+    width: 40%;
 }
 
 .skills__mysql{
-    width: 50%;
+    width: 40%;
 }
 
 .skills__express{
-    width: 50%;
+    width: 40%;
 }
 
 .skills__close .skills__list {
@@ -940,14 +940,14 @@ img {
 .footer__copy {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: var(--title-color);
     margin-top: var(--mb-3);
 }
 
 #year {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: var(--title-color);
     margin-top: var(--mb-3);
 }
 
@@ -1082,7 +1082,7 @@ img {
         margin: 0;
     }
     .section {
-        padding: 6rem 0 2rem;
+        padding: 8rem 2rem 6rem 2rem;
     }
     .section__subtitle {
         margin-bottom: 4rem;
