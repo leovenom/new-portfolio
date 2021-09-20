@@ -303,8 +303,7 @@ img {
 
 .home__blob-img {
     width: 170px;
-    /* transition: opacity .5s linear; */
-    transition: 0.3s;
+    transition: opacity .3s linear;
     cursor: pointer;
 }
 
@@ -357,9 +356,9 @@ img {
 }
 .home__img {
     position: relative;
-    transition: 0.3s;
+    transition: .3s;
 }
-.home__img:hover:after {
+.home__img:hover:after, .home__img:active:after {
     content: "Hahaha, stop tickling!";
     background: var(--body-color);
     color: var(--title-color);
@@ -367,7 +366,7 @@ img {
     border: solid 1px var(--title-color);
     position: absolute;
     bottom: 103%;
-    left: 38%;
+    left: 14%;
     transform: translateX(8%);
     border-radius: 15px;
 }
@@ -931,7 +930,7 @@ img {
 .footer__social {
     font-size: 1.25rem;
     margin-right: var(--mb-1-5);
-}
+}ƒ
 
 .footer__social:hover {
     color: var(--first-color-lighter);
@@ -1210,6 +1209,18 @@ img {
         display: flex;
         flex-direction:row;
         gap: 7rem;
+    }
+    .home__img:hover:after {
+        content: "Hahaha, stop tickling!";
+        background: var(--body-color);
+        color: var(--title-color);
+        padding: 5px 12px;
+        border: solid 1px var(--title-color);
+        position: absolute;
+        bottom: 103%;
+        left: 38%;
+        transform: translateX(8%);
+        border-radius: 15px;
     }
     
 }
