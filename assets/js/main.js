@@ -1,5 +1,3 @@
-document.addEventListener("touchstart", function(){}, true);
-
 function hover(element) {
     element.setAttribute('href', 'assets/img/perfil2.png');
   }
