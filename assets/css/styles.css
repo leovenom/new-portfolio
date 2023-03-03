@@ -526,15 +526,19 @@ img {
 }
 
 .skills__css {
-    width: 70%;
+    width: 80%;
 }
 
 .skills__js {
-    width: 40%;
+    width: 60%;
+}
+
+.skills__typeScrip {
+    width: 60%;
 }
 
 .skills__react {
-    width: 40%;
+    width: 60%;
 }
 
 .skills__figma {
@@ -554,7 +558,7 @@ img {
 }
 
 .skills__node{
-    width: 40%;
+    width: 50%;
 }
 
 .skills__notion{
