@@ -98,22 +98,6 @@ modalCloses.forEach((modalClose) => {
   });
 });
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper(".portfolio__container", {
-  cssMode: true,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // mousewheel: true,
-  // keyboard: true,
-});
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
@@ -250,23 +234,51 @@ window.onload = function () {
   }
 };
 
-let swiper2 = new Swiper(".slide-content", {
+// let swiper = new Swiper(".slide-content", {
+//   slidesPerView: 3,
+//   spaceBetween: 25,
+//   loop: true,
+//   centerSlide: "true",
+//   fade: "true",
+//   grabCursor: "true",
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//     dynamicBullets: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+
+//   breakpoints: {
+//     0: {
+//       slidesPerView: 1,
+//     },
+//     520: {
+//       slidesPerView: 2,
+//     },
+//     950: {
+//       slidesPerView: 3,
+//     },
+//   },
+// });
+
+/*==================== PORTFOLIO SWIPER  ====================*/
+let swiper = new Swiper(".slide-content", {
   slidesPerView: 3,
   spaceBetween: 25,
-  loop: true,
-  centerSlide: "true",
-  fade: "true",
   grabCursor: "true",
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
+  cssMode: false,
+  loop: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -278,4 +290,6 @@ let swiper2 = new Swiper(".slide-content", {
       slidesPerView: 3,
     },
   },
+  mousewheel: true,
+  keyboard: true,
 });
