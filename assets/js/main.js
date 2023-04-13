@@ -1,9 +1,9 @@
 function hover(element) {
-  element.setAttribute("href", "assets/img/perfil2.webp");
-}
-function unhover(element) {
-  element.setAttribute("href", "assets/img/perfil.webp");
-}
+    element.setAttribute('href', 'assets/img/perfil2.webp');
+  }
+  function unhover(element) {
+    element.setAttribute('href', 'assets/img/perfil.webp');
+  }
 
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById("nav-menu"),
