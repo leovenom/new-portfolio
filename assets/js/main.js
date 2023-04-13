@@ -1,8 +1,8 @@
 function hover(element) {
-  element.setAttribute("href", "assets/img/perfil2.png");
+  element.setAttribute("href", "assets/img/perfil2.webp");
 }
 function unhover(element) {
-  element.setAttribute("href", "assets/img/perfil.png");
+  element.setAttribute("href", "assets/img/perfil.webp");
 }
 
 /*==================== MENU SHOW Y HIDDEN ====================*/
@@ -234,42 +234,12 @@ window.onload = function () {
   }
 };
 
-// let swiper = new Swiper(".slide-content", {
-//   slidesPerView: 3,
-//   spaceBetween: 25,
-//   loop: true,
-//   centerSlide: "true",
-//   fade: "true",
-//   grabCursor: "true",
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//     dynamicBullets: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-
-//   breakpoints: {
-//     0: {
-//       slidesPerView: 1,
-//     },
-//     520: {
-//       slidesPerView: 2,
-//     },
-//     950: {
-//       slidesPerView: 3,
-//     },
-//   },
-// });
-
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiper = new Swiper(".slide-content", {
   slidesPerView: 3,
   spaceBetween: 25,
   grabCursor: "true",
-  cssMode: false,
+  enterSlide: "true",
   loop: true,
   navigation: {
     nextEl: ".swiper-button-next",

@@ -80,6 +80,7 @@ body.dark-theme {
     --container-color: hsl(var(--hue-color), 29%, 16%);
     --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+    --input-color: hsl(var(--hue-color), 28%, 12%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -133,6 +134,11 @@ ul {
 a {
     text-decoration:none;
     color: var(--first-color-alt);
+}
+
+.phone {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
 }
 
 img {
@@ -805,6 +811,7 @@ img {
 .portfolio__button {
     position: absolute;
     bottom: 0;
+    margin-bottom: 1rem;
 }
 
 
@@ -827,7 +834,7 @@ img {
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {
-    bottom: -2.5rem;
+    bottom: 0;
 }
 
 .swiper-pagination-bullet-active {
@@ -900,6 +907,7 @@ img {
     font-size: var(--small-font-size);
     color: var(--text-color-light);
 }
+
 /*==================== FOOTER ====================*/
 .footer {
     padding-top: 2rem;
@@ -1262,7 +1270,7 @@ img {
         right: -3.5rem;
     }
     .swiper-container-horizontal > .swiper-pagination-bullets {
-        bottom: -4.5rem;
+        bottom: 0;
     }
     .footer {
         padding-top: 4rem;
@@ -1271,7 +1279,7 @@ img {
 
 
 .slide-container{
-    max-width: 1120px;
+    max-width: 1020px;
     width: auto;
     padding: 40px 0;
   }
@@ -1290,7 +1298,7 @@ img {
     flex-direction: column;
     align-items: center;
     padding: 10px 14px;
-    height: 320px;
+    height: 318px;
   }
   .image-content{
     position: relative;
@@ -1328,6 +1336,9 @@ img {
   }
   .swiper-pagination-bullet-active{
     background-color: #4070F4;
+    width: 9.5px;
+    height: 9.5px;
+
   }
   
   @media screen and (max-width: 768px) {
@@ -1346,12 +1357,3 @@ img {
     transform: translate3d(0,0,0);
     z-index: 10;
 }
-
-.swiper-pagination, .swiper-pagination-clickable, .swiper-pagination-bullets, .swiper-pagination-bullets-dynamic{
-    top: auto;
-    bottom: auto;
-    left: 0;
-    width: 100% !important;
-    padding-top: 28px;
-  }
-©
