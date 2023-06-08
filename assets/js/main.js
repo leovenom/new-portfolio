@@ -1,9 +1,9 @@
 function hover(element) {
-    element.setAttribute('href', 'assets/img/perfil2.webp');
-  }
-  function unhover(element) {
-    element.setAttribute('href', 'assets/img/perfil.webp');
-  }
+  element.setAttribute("href", "assets/img/perfil2.webp");
+}
+function unhover(element) {
+  element.setAttribute("href", "assets/img/perfil.webp");
+}
 
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById("nav-menu"),
@@ -262,4 +262,40 @@ let swiper = new Swiper(".slide-content", {
   },
   mousewheel: true,
   keyboard: true,
+});
+
+const filter_btns = document.querySelectorAll(".filter-btn");
+
+filter_btns.forEach((buttone) =>
+  buttone.addEventListener("click", () => {
+    filter_btns.forEach((button) => button.classList.remove("active"));
+    buttone.classList.add("active");
+
+    let filterValue = buttone.dataset.filter;
+    console.log(filterValue);
+    $(".grids").isotope({ filter: filterValue });
+  })
+);
+
+filter_btns.forEach((buttone) =>
+  buttone.addEventListener("click", () => {
+    filter_btns.forEach((button) => button.classList.remove("active"));
+    buttone.classList.add("active");
+
+    let filterValue = buttone.dataset.filter;
+    console.log(filterValue);
+    $(".grids").isotope({ filter: filterValue });
+  })
+);
+
+$(".grids").isotope({
+  itemSelector: ".grid-item",
+  layoutMode: "fitRows",
+  transitionDuration: "0.6s",
+});
+
+$(".grids-2").isotope({
+  itemSelector: ".grid-item-2",
+  layoutMode: "fitRows",
+  transitionDuration: "0.6s",
 });
