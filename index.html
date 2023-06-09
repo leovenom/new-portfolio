@@ -561,7 +561,7 @@
 
             <!--==================== PORTFOLIO ====================-->
             <section class="portfolio section" id="portfolio">
-                <h2 class="section__title">Portfolio</h2>
+                <h2 class="section__title">Web Portfolio</h2>
                 <span class="section__subtitle">Most recent work</span>    
                 
                 <div class="slide-container container swiper-container">
@@ -965,7 +965,7 @@
                                 </div>
                             </div>
                             <!--==================== PORTFOLIO - Loka loker ====================-->
-                            <div class="card swiper-slide" title="Loka loker">
+                            <!-- <div class="card swiper-slide" title="Loka loker">
                                 <div class="card-image">
                                     <img src="assets/img/portfolio-localocker.png" alt="" class="card-img">
                                 </div>
@@ -987,7 +987,7 @@
                                         <i class="uil uil-arrow-right button__icon"></i>
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--==================== PORTFOLIO - Yelpcamp ====================-->
                             <div class="card swiper-slide" title="Yelpcamp">
                                 <div class="card-image">
@@ -1067,57 +1067,28 @@
 
     <div class="containere">
         <div class="sectiona-header">
-          <h3 class="title" data-title="My works">Portfolio</h3>
+            <h2 class="section__title">Design Portfolio</h2>
+            <span class="section__subtitle__secondary">
+                Most recent work</span>  
         </div>
 
 
       <div class="sectiona-body">
         <div class="filter">
           <button class="filter-btn active" data-filter="*">All</button>
-          <button class="filter-btn" data-filter=".ui">UI/UX</button>
-          <button class="filter-btn" data-filter=".webdev">Web Dev</button>
+          <button class="filter-btn" data-filter=".ui">Product Design</button>
+          <button class="filter-btn" data-filter=".webdev">Growth Ad</button>
           <button class="filter-btn" data-filter=".appdev">
             Mobile App
           </button>
           <button class="filter-btn" data-filter=".logo-design">
-            Logo Design
+            Web Design
           </button>
         </div>
-
-        <!-- <div class="grids-2">
-            <div class="grid-item-2 logo-design">
-              <div class="gallery-images">
-                <img src="assets/img/portfolio/port1.jpg" alt="" />
-                <div class="img-overlays">
-                  <div class="img-description">
-                    <h3>Logo Design</h3>
-                    <h5>View Demo</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item-2 webdev">
-              <div class="gallery-images">
-                <img src="assets/img/portfolio/port2.png" alt="" />
-                <div class="img-overlays">
-                  <div class="img-description">
-                    <h3>Web Development</h3>
-                    <h5>View Demo</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div> -->
-        <div class="overly" id="over">
-            <div class="show" id="show">
-               <i class="fa fa-close close" id="close"></i>
-               <img id="imgshow" src="" alt="">
-            </div>
-         </div>
         <div class="grids">
-          <div class="grid-item grid-item--width2 grid-item--height2 logo-design">
-            <div class="gallery-image">
-              <img src="assets/img/portfolio/port1.jpg" alt="" />
+          <div class="grid-item grid-item--width2 logo-design">
+            <div class="gallery-image container__img-holder">
+              <img src="assets/img/portfolio/port1.jpg" alt="" data-img="assets/img/portfolio/port1.jpg" />
               <div class="img-overlay">
                 <div class="img-description">
                   <h3>Logo Design</h3>
@@ -1127,8 +1098,8 @@
             </div>
           </div>
           <div class="grid-item ui webdev">
-            <div class="gallery-image">
-              <img src="assets/img/portfolio/port3.png" alt="" />
+            <div class="gallery-image container__img-holder">
+              <img src="assets/img/portfolio/port3.png" alt="" data-img="assets/img/portfolio/port3.png" />
               <div class="img-overlay">
                 <div class="img-description">
                   <h3>Web Design</h3>
@@ -1148,7 +1119,7 @@
               </div>
             </div>
           </div>
-          <div class="grid-item grid-item--width2 grid-item--height2 webdev">
+          <div class="grid-item grid-item--width2 webdev">
             <div class="gallery-image">
               <img src="assets/img/portfolio/port2.png" alt="" />
               <div class="img-overlay">
@@ -1215,9 +1186,15 @@
             </div>
           </div>
         </div>
-        <div class="more-folio">
-          <a href="#" class="btn">More Folio</a>
-        </div>
+        <div class="img-popup">
+            <img src="" alt="Popup Image">
+            <div class="close-btnn">
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <div class="nav-btnn prev-btnn"><i class="uil uil-arrow-left scrollup__icon"></i></div>
+            <div class="nav-btnn next-btnn"><i class="uil uil-arrow-right scrollup__icon"></i></div>
+          </div>
       </div>
 
   </section>
