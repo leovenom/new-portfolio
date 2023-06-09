@@ -1518,7 +1518,7 @@ img {
   }
   
   .gallery-image img {
-    /* position: absolute; */
+    position: absolute;
     height: fit-content;
     /* width: inherit; */
     background-size: cover;
@@ -1582,12 +1582,6 @@ img {
   .gallery-image:hover img {
     transform: translate(-50%, -50%) scale(1.1);
   }
-
-  .img-description {
-    width: 100%;
-  }
-  
-
 
   @media (max-width: 1280px) {
     .title {
