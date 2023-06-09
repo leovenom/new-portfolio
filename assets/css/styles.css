@@ -1792,11 +1792,11 @@ img {
 
     .gallery-image {
         height: 220px;
-     width: 100%;
+     width: auto;
     }
     .grid-item--width2 .gallery-image{
         height: 220px;
-        width: 100%;
+        width: auto;
       }
 
 
