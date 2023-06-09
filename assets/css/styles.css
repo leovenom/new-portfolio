@@ -150,7 +150,7 @@ a {
 }
 
 img {
-    height: auto;
+    /* height: auto; */
     max-width: 100%;
 }
 
@@ -1521,11 +1521,9 @@ img {
     /* position: absolute; */
     height: fit-content;
     /* width: inherit; */
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
     position: relative;
     width: 115%;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1787,12 +1785,10 @@ img {
     }
 
     .gallery-image {
-        height: 220px;
-     width: auto;
+        width: 100%;
     }
-    .grid-item--width2 .gallery-image{
-        height: 220px;
-        width: auto;
+ .grid-item--width2 img{
+    height: auto;
       }
 
 
