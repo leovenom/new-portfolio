@@ -1791,13 +1791,11 @@ img {
 
     .gallery-image {
         height: 145px;
-        width: 100%;
-        object-fit: cover;
+        width: auto;
     }
     .grid-item--width2 .gallery-image{
         height: 145px;
-        width: 100%;
-        object-fit: cover;
+        width: auto;
       }
 
 
