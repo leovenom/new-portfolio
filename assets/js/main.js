@@ -1,9 +1,9 @@
 function hover(element) {
-    element.setAttribute('href', 'assets/img/perfil2.webp');
-  }
-  function unhover(element) {
-    element.setAttribute('href', 'assets/img/perfil.webp');
-  }
+  element.setAttribute("href", "assets/img/perfil2.webp");
+}
+function unhover(element) {
+  element.setAttribute("href", "assets/img/perfil.webp");
+}
 
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById("nav-menu"),
@@ -262,4 +262,84 @@ let swiper = new Swiper(".slide-content", {
   },
   mousewheel: true,
   keyboard: true,
+});
+
+const filter_btns = document.querySelectorAll(".filter-btn");
+
+filter_btns.forEach((buttone) =>
+  buttone.addEventListener("click", () => {
+    filter_btns.forEach((button) => button.classList.remove("active"));
+    buttone.classList.add("active");
+
+    let filterValue = buttone.dataset.filter;
+    console.log(filterValue);
+    $(".grids").isotope({ filter: filterValue });
+  })
+);
+
+filter_btns.forEach((buttone) =>
+  buttone.addEventListener("click", () => {
+    filter_btns.forEach((button) => button.classList.remove("active"));
+    buttone.classList.add("active");
+
+    let filterValue = buttone.dataset.filter;
+    console.log(filterValue);
+    $(".grids").isotope({ filter: filterValue });
+  })
+);
+
+$(".grids").isotope({
+  itemSelector: ".grid-item",
+  layoutMode: "fitRows",
+  transitionDuration: "0.6s",
+});
+
+$(document).ready(function () {
+  // required elements
+  var imgPopup = $(".img-popup");
+  var imgCont = $(".container__img-holder");
+  var popupImage = $(".img-popup img");
+  var closeBtn = $(".close-btnn");
+  var nextBtn = $(".next-btnn");
+  var prevBtn = $(".prev-btnn");
+  var currentImageIndex = 0;
+
+  // get images data
+  var images = imgCont
+    .map(function () {
+      return $(this).children("img").attr("data-img");
+    })
+    .get();
+
+  // handle events
+  imgCont.on("click", function () {
+    currentImageIndex = imgCont.index(this);
+    showImage(currentImageIndex);
+    imgPopup.addClass("opened");
+  });
+
+  nextBtn.on("click", function (e) {
+    e.stopPropagation();
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    showImage(currentImageIndex);
+  });
+
+  prevBtn.on("click", function (e) {
+    e.stopPropagation();
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    showImage(currentImageIndex);
+  });
+
+  $(imgPopup, closeBtn).on("click", function () {
+    imgPopup.removeClass("opened");
+    popupImage.attr("src", "");
+  });
+
+  popupImage.on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  function showImage(index) {
+    popupImage.attr("src", images[index]);
+  }
 });
