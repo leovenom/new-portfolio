@@ -1791,11 +1791,11 @@ img {
     }
 
     .gallery-image {
-        height: 250px;
+        height: 2520px;
      width: 100%;
     }
     .grid-item--width2 .gallery-image{
-        height: 250px;
+        height: 220px;
         width: 100%;
       }
 
