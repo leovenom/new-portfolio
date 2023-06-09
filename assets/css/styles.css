@@ -150,7 +150,8 @@ a {
 }
 
 img {
-    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 /*==================== REUSABLE CSS CLASSES ====================*/
@@ -1791,11 +1792,11 @@ img {
 
     .gallery-image {
         height: 145px;
-        width: auto;
+        width: 100%;
     }
     .grid-item--width2 .gallery-image{
         height: 145px;
-        width: auto;
+        width: 100%;
       }
 
 
