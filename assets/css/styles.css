@@ -1742,7 +1742,7 @@ img {
     }
 
     .background-bg {
-      height: 390px;
+      height: 430px;
     }
   
     .portfolio .half-circle1,
@@ -1787,7 +1787,7 @@ img {
     .gallery-image {
         width: 100%;
     }
- .grid-item--width2 img{
+ .grid-item--width2 .gallery-image{
     height: auto;
       }
 
