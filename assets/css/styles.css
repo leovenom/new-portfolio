@@ -153,7 +153,6 @@ img {
     /* height: auto; */
     max-width: 100%;
 }
-
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section{
     padding: 2rem 0 4rem;
@@ -1583,6 +1582,28 @@ img {
     transform: translate(-50%, -50%) scale(1.1);
   }
 
+  .prev-btnn, .next-btnn {
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 36px;
+    background-color: var(--first-color);
+    font-size: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    z-index: var(--z-tooltip);
+    }
+
+  .prev-btnn {
+    left: 1rem;
+    }
+
+    .next-btnn {
+    right: 1rem;
+    }
+
   @media (max-width: 1280px) {
     .title {
       font-size: 2.1rem;
@@ -1773,6 +1794,15 @@ img {
     .grid-item {
       width: 100%;
     }
+    .prev-btnn {
+       
+        top:66%
+        }
+    
+        .next-btnn {
+    
+        top:66%
+        }
   }
   
   @media (max-width: 560px) {
@@ -1787,12 +1817,10 @@ img {
     .gallery-image {
         width: 100%;
     }
- .grid-item--width2 .gallery-image{
+    .grid-item--width2 .gallery-image
+    {
     height: auto;
-
-      }
-
-
+    }
   }
   
   /* End Responsive */
@@ -1875,24 +1903,27 @@ img {
   
   }
 
-  .prev-btnn, .next-btnn {
-    position: absolute;
-    top: 50%;
-    width: 36px;
-    height: 36px;
-    background-color: var(--first-color);
-    font-size: 1.5rem;
-    color: #FFF;
+.img-popup .img-description {
+    position: relative;
+    max-width: 80%;  /* adjust as needed */
+    margin-top: 20px;
     text-align: center;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    z-index: var(--z-tooltip);
+    color: #000;  /* adjust as needed */
+    font-size: 16px;  /* adjust as needed */
+}
+.img-popup .img-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.prev-btnn {
-    left: 1rem;
+.img-popup .popup-btn {
+margin-top: 24px;
+cursor: pointer;
 }
 
-.next-btnn {
-    right: 1rem;
+.hidden {
+    display: none;
 }
