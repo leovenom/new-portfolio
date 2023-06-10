@@ -294,52 +294,185 @@ $(".grids").isotope({
   transitionDuration: "0.6s",
 });
 
+// $(document).ready(function () {
+//   // required elements
+//   var imgPopup = $(".img-popup");
+//   var imgCont = $(".container__img-holder");
+//   var popupImage = $(".img-popup img");
+//   var closeBtn = $(".close-btnn");
+//   var nextBtn = $(".next-btnn");
+//   var prevBtn = $(".prev-btnn");
+//   var currentImageIndex = 0;
+
+//   // get images data
+//   var images = imgCont
+//     .map(function () {
+//       return $(this).children("img").attr("data-img");
+//     })
+//     .get();
+
+//   // handle events
+//   imgCont.on("click", function () {
+//     currentImageIndex = imgCont.index(this);
+//     showImage(currentImageIndex);
+//     imgPopup.addClass("opened");
+//   });
+
+//   nextBtn.on("click", function (e) {
+//     e.stopPropagation();
+//     currentImageIndex = (currentImageIndex + 1) % images.length;
+//     showImage(currentImageIndex);
+//   });
+
+//   prevBtn.on("click", function (e) {
+//     e.stopPropagation();
+//     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+//     showImage(currentImageIndex);
+//   });
+
+//   $(imgPopup, closeBtn).on("click", function () {
+//     imgPopup.removeClass("opened");
+//     popupImage.attr("src", "");
+//   });
+
+//   popupImage.on("click", function (e) {
+//     e.stopPropagation();
+//   });
+
+//   function showImage(index) {
+//     popupImage.attr("src", images[index]);
+//   }
+// });
 $(document).ready(function () {
-  // required elements
-  var imgPopup = $(".img-popup");
-  var imgCont = $(".container__img-holder");
-  var popupImage = $(".img-popup img");
-  var closeBtn = $(".close-btnn");
-  var nextBtn = $(".next-btnn");
-  var prevBtn = $(".prev-btnn");
-  var currentImageIndex = 0;
+  // flag to track whether the gallery has been initialized
+  var galleryInitialized = false;
 
-  // get images data
-  var images = imgCont
-    .map(function () {
-      return $(this).children("img").attr("data-img");
-    })
-    .get();
+  // your gallery's parent div
+  var galleryDiv = $(".grid-item");
 
-  // handle events
-  imgCont.on("click", function () {
-    currentImageIndex = imgCont.index(this);
-    showImage(currentImageIndex);
-    imgPopup.addClass("opened");
-  });
+  // check if an element is visible on screen
+  function isOnScreen(element) {
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    var elementTop = element.offset().top;
+    var elementBottom = elementTop + element.height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  }
 
-  nextBtn.on("click", function (e) {
-    e.stopPropagation();
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    showImage(currentImageIndex);
-  });
+  var popupBtn = $(".popup-btn");
 
-  prevBtn.on("click", function (e) {
-    e.stopPropagation();
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    showImage(currentImageIndex);
-  });
-
-  $(imgPopup, closeBtn).on("click", function () {
-    imgPopup.removeClass("opened");
-    popupImage.attr("src", "");
-  });
-
-  popupImage.on("click", function (e) {
+  popupBtn.on("click", function (e) {
     e.stopPropagation();
   });
 
-  function showImage(index) {
-    popupImage.attr("src", images[index]);
+  // initialize the gallery
+  function initializeGallery() {
+    // required elements
+    var imgPopup = $(".img-popup");
+    var imgCont = $(".container__img-holder");
+    var popupImage = $(".img-popup img");
+    var popupDescription = $(".img-popup .img-description");
+    var closeBtn = $(".close-btnn");
+    var nextBtn = $(".next-btnn");
+    var prevBtn = $(".prev-btnn");
+    var currentImageIndex = 0;
+    var popupBtn = $(".popup-btn");
+
+    // get images data
+    var images = imgCont
+      .map(function () {
+        return $(this).children("img").attr("data-img");
+      })
+      .get();
+
+    // handle events
+    imgCont.on("click", function () {
+      console.log($(this).data("show-button"));
+      currentImageIndex = imgCont.index(this);
+      showImage(currentImageIndex);
+      var description = $(this).find(".img-description").html();
+      popupDescription.html(description);
+      imgPopup.addClass("opened");
+
+      updateButtonVisibility($(this));
+
+      if ($(this).data("show-button") == true) {
+        popupBtn.removeClass("hidden");
+      } else {
+        popupBtn.addClass("hidden");
+      }
+
+      var url = $(this).data("url");
+      popupBtn.attr("href", url);
+      updateButtonVisibility($(this));
+    });
+
+    nextBtn.on("click", function (e) {
+      e.stopPropagation();
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showImage(currentImageIndex);
+      var description = imgCont
+        .eq(currentImageIndex)
+        .find(".img-description")
+        .html();
+      popupDescription.html(description);
+      updateButtonVisibility(imgCont.eq(currentImageIndex));
+
+      var url = imgCont.eq(currentImageIndex).data("url");
+      popupBtn.attr("href", url);
+      updateButtonVisibility(imgCont.eq(currentImageIndex));
+    });
+
+    prevBtn.on("click", function (e) {
+      e.stopPropagation();
+      currentImageIndex =
+        (currentImageIndex - 1 + images.length) % images.length;
+      showImage(currentImageIndex);
+      var description = imgCont
+        .eq(currentImageIndex)
+        .find(".img-description")
+        .html();
+      popupDescription.html(description);
+      updateButtonVisibility(imgCont.eq(currentImageIndex));
+
+      var url = imgCont.eq(currentImageIndex).data("url");
+      popupBtn.attr("href", url);
+      updateButtonVisibility(imgCont.eq(currentImageIndex));
+    });
+
+    function updateButtonVisibility(imgContainer) {
+      if (imgContainer.data("show-button") == true) {
+        popupBtn.removeClass("hidden");
+      } else {
+        popupBtn.addClass("hidden");
+      }
+    }
+
+    $(imgPopup, closeBtn).on("click", function () {
+      imgPopup.removeClass("opened");
+      popupImage.attr("src", "");
+    });
+
+    popupImage.on("click", function (e) {
+      e.stopPropagation();
+    });
+
+    function showImage(index) {
+      popupImage.attr("src", images[index]);
+    }
+
+    galleryInitialized = true;
+  }
+
+  // on scroll, check if the gallery is visible and hasn't been initialized
+  $(window).scroll(function () {
+    if (!galleryInitialized && isOnScreen(galleryDiv)) {
+      initializeGallery();
+    }
+  });
+
+  // check once on page load as well
+  if (!galleryInitialized && isOnScreen(galleryDiv)) {
+    initializeGallery();
   }
 });
