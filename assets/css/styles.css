@@ -417,6 +417,7 @@ img {
 .button--flex {
     display: inline-flex;
     align-items: center;
+    align-self: center;
 }
 
 .button--small {
@@ -790,7 +791,6 @@ img {
 .portfolio__title {
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
-    text-align: start;
 }
 .portfolio__subtitle {
     display: inline-block;
@@ -826,7 +826,6 @@ img {
     bottom: 0;
     margin-bottom: 1rem;
 }
-
 
 .swiper-button-prev::after,
 .swiper-button-next::after{
@@ -1308,7 +1307,7 @@ img {
   .card-content{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 10px 14px;
     height: 318px;
   }
