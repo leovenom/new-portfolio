@@ -790,6 +790,7 @@ img {
 .portfolio__title {
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
+    text-align: start;
 }
 .portfolio__subtitle {
     display: inline-block;
